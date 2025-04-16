@@ -74,5 +74,32 @@ a {
 }
   
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
+
+.with-icon {
+    position: relative;
+  }
+  
+  .with-icon input {
+    padding-left: 40px; /* laisse de la place pour l’icône */
+  }
+  
+  .with-icon .fa-user,
+  .with-icon .fa-lock {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: orange;
+  }
+  
+  .toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: orange;
+    cursor: pointer;
+  }
+  

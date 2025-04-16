@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Réinitialiser le Mot de Passe
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="reset-password-container">
+    <h1 class="display-4">Réinitialiser votre Mot de Passe</h1>
+    <p class="text-muted">
+      Veuillez entrer votre nouveau mot de passe et le confirmer.
+    </p>
+
+    <form (ngSubmit)="resetPassword()">
+      <!-- Nouveau mot de passe -->
+      <div class="form-group with-icon">
+        <i class="fas fa-lock orange-icon"></i>
+        <input 
+          type="password" 
+          class="form-control" 
+          placeholder="Nouveau mot de passe" 
+          [(ngModel)]="newPassword" 
+          name="newPassword" 
+          (input)="updateProgressBar()">
+      </div>
+
+      <!-- Confirmer le mot de passe -->
+      <div class="form-group with-icon">
+        <i class="fas fa-lock orange-icon"></i>
+        <input 
+          type="password" 
+          class="form-control" 
+          placeholder="Confirmer le mot de passe" 
+          [(ngModel)]="confirmPassword" 
+          name="confirmPassword" 
+          (input)="updateProgressBar()">
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" [style.width]="progress + '%'" [ngClass]="{'bg-success': progress === 100, 'bg-warning': progress < 100 && progress > 0}">
+          {{ progress }}%
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block mt-3">Réinitialiser</button>
+    </form>
+
+    <p class="mt-3 text-center">
+      <a routerLink="/login">Retour</a>
+    </p>
+  </div>
+</ion-content>

@@ -22,4 +22,8 @@ export const routes: Routes = [
     path: 'politiques',
     loadComponent: () => import('./politiques/politiques.page').then( m => m.PolitiquesPage)
   },
+  {
+    path: 'reset-password',
+    loadComponent: () => import('./reset-password/reset-password.page').then( m => m.ResetPasswordPage)
+  },
 ];
